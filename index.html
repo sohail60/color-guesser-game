@@ -120,6 +120,7 @@
 
     <script>
         console.log("Hello World");
+        // let correctColor;
 
     let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
         "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
@@ -159,7 +160,7 @@
                 console.log("Play Again Colors: "+squareColor);
                 
                 // correct color for easy game
-                let correctColor=squareColor[random3to5()];
+                correctColor=squareColor[random3to5()];
                 console.log("Play Again Correct: "+correctColor);
 
                 // printing the correct color in rgb topic
@@ -189,7 +190,7 @@
                 console.log("Play Again Colors: "+squareColor);
 
                 // correct color for hard game
-                let correctColor=squareColor[random0to5()];
+                correctColor=squareColor[random0to5()];
                 console.log("Play Again Correct: "+correctColor);
 
                 // printing the correct color in rgb topic
@@ -210,7 +211,8 @@
                 // alert("Clicked");
                 let clickedColor=this.style.backgroundColor;
                 console.log("Clicked: "+clickedColor);
-                if(clickedColor==correctColor){
+                console.log("Correct Color:" + correctColor);
+                if(clickedColor===correctColor){
                 changeSquareColor(correctColor);
 
                 let play=document.getElementById("play-again");
@@ -248,7 +250,8 @@
                 console.log("Play Again Colors: "+squareColor);
 
                 // correct color for play again
-                let correctColor=squareColor[random0to5()];
+                // let correctColor=squareColor[random0to5()];      // wrong as we are declaring it again and again, so each time a new variable will be made but we dont want that as we want to compare this varibale only.
+                correctColor=squareColor[random0to5()];
                 console.log("Play Again Correct: "+correctColor);
 
                 // printing the correct color in rgb topic
