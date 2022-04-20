@@ -32,7 +32,7 @@
         #heading{
             color: white;
             text-align: center;
-            background-color: RGB(7, 145, 145);
+            background-color: rgb(7, 145, 145);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -101,7 +101,7 @@
 <body>
 
     <div id="heading">
-        <h1>THE GREAT <div id="correctColor">RGB</div> GUESSING GAME</h1>
+        <h1>THE GREAT <div id="correctColor">rgb</div> GUESSING GAME</h1>
     </div>
     <div id="option-bar">
         <div class="options hovering pointer" id="play-again">NEW COLORS</div>
@@ -121,12 +121,12 @@
     <script>
         console.log("Hello World");
 
-    let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+    let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")"
     ]
     console.log(squareColor);
 
@@ -146,12 +146,12 @@
             easy.classList.add("selected");
             hard.classList.remove("selected");
             
-            let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+            let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")"
         ]             
         for(let i=0;i<3;i++){
                 square[i].style.display="none";
@@ -179,12 +179,12 @@
             for(let i=0;i<square.length;i++){
                 square[i].style.display="flex";
             }
-            let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+            let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")"
                 ]             
                 console.log("Play Again Colors: "+squareColor);
 
@@ -236,14 +236,14 @@
         playAgain.addEventListener("click",function(){
             // alert("Clicked Play Again");
             let heading=document.getElementById("heading");
-            heading.style.backgroundColor="RGB(7, 145, 145)";
+            heading.style.backgroundColor="rgb(7, 145, 145)";
             
-            let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+            let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")"
                 ]             
                 console.log("Play Again Colors: "+squareColor);
 
@@ -286,18 +286,18 @@
             // function colorgenerator(){
             //     let squareColor=[];
             //     for (let i=0;i<square.length;i++){
-                //          let randomColor="RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")";
+                //          let randomColor="rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")";
                 //         squareColor[i]=randomColor;
             //     }
             //     return squareColor;             
             // }
 
-            // let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
-            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+            // let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")"
             // ];
             
             </script>
