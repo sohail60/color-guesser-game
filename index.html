@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #232323;
+            margin: 0px;
+            padding: 0px;
+        }
+        #heading{
+            color: white;
+            text-align: center;
+            background-color: RGB(7, 145, 145);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 170px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: lighter;
+        }
+        #correctColor{
+            font-size: 50px;
+        }
+        #option-bar{
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Russo One', sans-serif;
+            color: #fe1145;
+            font-size: 20px;
+        }
+        .options{
+            padding: 15px 10px;  
+            margin: 0px 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hovering{
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .hovering:hover{
+            background-color: #ffd100;
+            color: black;
+        }
+        #easy{
+            padding-right: 5px;
+            margin-right: 2px;
+        }
+        #hard{
+            padding-left: 5px;
+            margin-left: 2px;
+        }
+        .square{
+            width: 45%;
+            max-width: 20%;
+            height: 80px;
+            background-color: hotpink;
+            margin: 1.67%;
+            padding: 20px;
+            border-radius: 15px;
+            transition: background-color 0.4s;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
+            margin: 10px auto;
+        }
+        .selected{
+            background-color: #ffd100;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heading">
+        <h1>THE GREAT <div id="correctColor">RGB</div> GUESSING GAME</h1>
+    </div>
+    <div id="option-bar">
+        <div class="options hovering pointer" id="play-again">NEW COLORS</div>
+        <div class="options" id="answer">ANSWER PLACEHOLDER</div>
+        <div class="options hovering pointer" id="easy">EASY</div>
+        <div class="options hovering pointer selected" id="hard">HARD</div>
+    </div>
+    <div class="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <script>
+        console.log("Hello World");
+
+    let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+        "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+    ]
+    console.log(squareColor);
+
+        let square=document.querySelectorAll('.square');
+        
+        // correct color for initial game
+        let correctColor=squareColor[random0to5()];
+        let printColor=document.getElementById("correctColor");
+        
+        // printing the correct color in rgb topic
+        printColor.textContent=correctColor;
+        console.log("Initial: "+correctColor);
+
+        
+        let easy=document.getElementById("easy");
+        easy.addEventListener("click",function(){
+            easy.classList.add("selected");
+            hard.classList.remove("selected");
+            
+            let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+        ]             
+        for(let i=0;i<3;i++){
+                square[i].style.display="none";
+            }
+                console.log("Play Again Colors: "+squareColor);
+                
+                // correct color for easy game
+                let correctColor=squareColor[random3to5()];
+                console.log("Play Again Correct: "+correctColor);
+
+                // printing the correct color in rgb topic
+                printColor.textContent=correctColor;
+                
+                // Giving bgcolor to all the squares
+                for( let i=3 ;i< square.length; i++){
+                    square[i].style.backgroundColor=squareColor[i];
+                }
+            });
+            
+        let hard=document.getElementById("hard");
+        hard.addEventListener("click",function(){
+            hard.classList.add("selected");
+            easy.classList.remove("selected");
+
+            for(let i=0;i<square.length;i++){
+                square[i].style.display="flex";
+            }
+            let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+                ]             
+                console.log("Play Again Colors: "+squareColor);
+
+                // correct color for hard game
+                let correctColor=squareColor[random0to5()];
+                console.log("Play Again Correct: "+correctColor);
+
+                // printing the correct color in rgb topic
+                printColor.textContent=correctColor;
+
+                // Giving bgcolor to all the squares
+                for( let i=0 ;i< square.length; i++){
+                    square[i].style.backgroundColor=squareColor[i];
+                }
+        });
+            
+    for( let i=0 ;i< square.length; i++){
+            // Giving bgcolor to all the squares
+            square[i].style.backgroundColor=squareColor[i];
+
+            // Listening click for square boxes
+            square[i].addEventListener("click",function(){
+                // alert("Clicked");
+                let clickedColor=this.style.backgroundColor;
+                console.log("Clicked: "+clickedColor);
+                if(clickedColor==correctColor){
+                changeSquareColor(correctColor);
+
+                let play=document.getElementById("play-again");
+                play.textContent="Play Again"
+
+                let headingBox=document.getElementById("heading");
+                headingBox.style.backgroundColor=correctColor;
+
+                let answer=document.getElementById("answer");
+                answer.textContent="Correct!";
+            }
+            else{
+                this.style.backgroundColor= "#232323" ;
+                let answer=document.getElementById("answer");
+                answer.textContent="Try Again!";
+            }
+            });
+        }
+
+        
+        // Play Again
+        let playAgain=document.getElementById("play-again");
+        playAgain.addEventListener("click",function(){
+            // alert("Clicked Play Again");
+            let heading=document.getElementById("heading");
+            heading.style.backgroundColor="RGB(7, 145, 145)";
+            
+            let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+                    "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+                ]             
+                console.log("Play Again Colors: "+squareColor);
+
+                // correct color for play again
+                let correctColor=squareColor[random0to5()];
+                console.log("Play Again Correct: "+correctColor);
+
+                // printing the correct color in rgb topic
+                printColor.textContent=correctColor;
+                
+                // Giving bgcolor to all the squares
+                for( let i=0 ;i< square.length; i++){
+                    square[i].style.backgroundColor=squareColor[i];
+                }
+            });
+            
+
+        // Functions for use
+        function random0to5(){
+            let ran=Math.floor(Math.random()*6);
+            return ran;
+        }
+    
+        function random3to5(){
+            let ran=Math.floor(Math.random()*3+3);
+            return ran;
+        }
+    
+        function random0to255(){
+            let random=(Math.floor(Math.random()*(255-0)+0));
+            return random;
+        }
+    
+        function changeSquareColor(correctColor){
+            for(let i=0;i<square.length;i++){
+                square[i].style.backgroundColor=correctColor;
+            }
+        }
+
+            // function colorgenerator(){
+            //     let squareColor=[];
+            //     for (let i=0;i<square.length;i++){
+                //          let randomColor="RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")";
+                //         squareColor[i]=randomColor;
+            //     }
+            //     return squareColor;             
+            // }
+
+            // let squareColor=["RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")",
+            //     "RGB("+random0to255()+", "+random0to255()+", "+random0to255()+")"
+            // ];
+            
+            </script>
+</body>
+</html>
