@@ -105,7 +105,7 @@
     </div>
     <div id="option-bar">
         <div class="options hovering pointer" id="play-again">NEW COLORS</div>
-        <div class="options" id="answer">ANSWER PLACEHOLDER</div>
+        <div class="options" id="answer"></div>
         <div class="options hovering pointer" id="easy">EASY</div>
         <div class="options hovering pointer selected" id="hard">HARD</div>
     </div>
@@ -170,6 +170,12 @@
                 for( let i=3 ;i< square.length; i++){
                     square[i].style.backgroundColor=squareColor[i];
                 }
+
+                // Removing Correct/ Try Again msg
+                answer.textContent="";
+
+                // Changing the color of heading
+                heading.style.backgroundColor="rgb(7, 145, 145)";
             });
             
         let hard=document.getElementById("hard");
@@ -198,8 +204,14 @@
 
                 // Giving bgcolor to all the squares
                 for( let i=0 ;i< square.length; i++){
-                    square[i].style.backgroundColor=squareColor[i];
+                    square[i].style.backgroundColor=squareColor[i];1
                 }
+
+                // Removing Correct/ Try Again msg
+                answer.textContent="";
+
+                // Changing the color of heading
+                heading.style.backgroundColor="rgb(7, 145, 145)";
         });
             
     for( let i=0 ;i< square.length; i++){
@@ -239,6 +251,7 @@
             // alert("Clicked Play Again");
             let heading=document.getElementById("heading");
             heading.style.backgroundColor="rgb(7, 145, 145)";
+            answer.textContent="";
             
             let squareColor=["rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
                     "rgb("+random0to255()+", "+random0to255()+", "+random0to255()+")",
